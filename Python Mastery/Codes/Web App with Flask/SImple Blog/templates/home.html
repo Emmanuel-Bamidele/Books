@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Blog Posts</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/create_post">Create Post</a> | 
+        <a href="/about">About</a>
+    </nav>
+    <h1>Welcome to Our Blog</h1>
+    <h2>Recent Posts</h2>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <strong>{{ post.title }}</strong> by {{ post.author }} on {{ post.publish_date }}
+            <p>{{ post.content[:100] }}...</p>
+        </li>
+        {% else %}
+        <li>No posts yet!</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

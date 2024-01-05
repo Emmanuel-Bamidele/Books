@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create a New Blog Post</title>
+    <style>
+        textarea {
+            width: 100%;       /* Makes the textarea span the full width of the container */
+            height: 200px;     /* Sets a fixed height for the textarea */
+            padding: 10px;     /* Adds some padding inside the textarea */
+            box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/create_post">Create Post</a> | 
+        <a href="/about">About</a>
+    </nav>
+    <h1>Create a New Blog Post</h1>
+    <form action="/create_post" method="post">
+        Title: <input type="text" name="title" required><br>
+        Content: <textarea name="content" required></textarea><br>
+        Author: <input type="text" name="author" required><br>
+        Publish Date: <input type="date" name="publish_date" required><br>
+        <input type="submit" value="Create Post">
+    </form>
+</body>
+</html>
