@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label, select, input {
+            margin-bottom: 10px;
+            display: block;
+        }
+        #result {
+            color: green;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unit Converter</h1>
+        <form action="/convert" method="post">
+            <label for="unit_type">Choose a conversion type:</label>
+            <select name="unit_type" id="unit_type">
+                <option value="c_to_f">Celsius to Fahrenheit</option>
+                <option value="f_to_c">Fahrenheit to Celsius</option>
+                <!-- Add more conversion options here -->
+            </select>
+            <label for="value">Value:</label>
+            <input type="number" id="value" name="value" required>
+            <input type="submit" value="Convert">
+        </form>
+        
+        <!-- Result Display Section -->
+        {% if message %}
+            <div id="result">
+                <p>Result: {{ message }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
